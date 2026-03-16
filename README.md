@@ -76,6 +76,30 @@ The **HLK-LD6002** is a radar sensing module based on the **ADT6101P** chip, fea
 ### 📏 Target Distance Protocol
 ![Target distance protocol](https://raw.githubusercontent.com/phuongnamzz/HLK-LD6002/main/resources/target_distance_protocol.png)
 
+## ✅ Protocol v1.3 Data Command Support
+
+This library now includes the v1.3 data commands below:
+
+| Command | Meaning | API |
+|:--:|:--|:--|
+| `0xFFFF` | Firmware information query/response | `requestFirmwareInfo()`, `hasNewFirmwareInfo()`, `getFirmwareInfo()` |
+| `0x0F09` | Human presence status | `hasNewHumanPresence()`, `getHumanPresenceRaw()`, `isHumanPresent()` |
+| `0x0A04` | Person position data (raw frame + parsed XY) | `hasNewRaw0A04Frame()`, `getRaw0A04Frame()`, `hasNewPersonPosition()`, `getPersonPosition()` |
+| `0x0A17` | Track position data (XYZ) | `hasNewTrackPosition()`, `getTrackPosition()` |
+
+## 🔖 Boot Firmware Version Print (`0xFFFF`)
+
+The example sketch queries firmware info at startup and prints it to Serial.
+
+- Query API: `requestFirmwareInfo()`
+- Read APIs: `hasNewFirmwareInfo()`, `getFirmwareInfo()`
+- Example log:
+
+```text
+[0xFFFF] project_name=4 (PeopleCount), version=1.6.7
+[BOOT] Firmware Version: 1.6.7
+```
+
 ---
 
 ## 🔗 ESP32 Connection Table
@@ -166,3 +190,15 @@ Breath Rate: 23.00 bpm
 Heart Rate: 76.00 bpm
 Heart Rate: 75.00 bpm
 ```
+
+---
+
+## 🗓️ Latest Update
+
+- Date: **2026-03-16**
+- Author: **Henry Li**
+- Changes:
+  - Added v1.3 protocol command support notes for `0xFFFF`, `0x0F09`, `0x0A04`, and `0x0A17`
+  - Added README note for startup firmware version print (`0xFFFF`, sample version `1.6.7`)
+  - Updated `library.json` and `library.properties` metadata
+  - Converted the example `.ino` Chinese text to English

@@ -1,8 +1,8 @@
 {
   "name": "HLK-LD6002",
-  "version": "1.0.15",
-  "keywords": ["radar", "heart", "breath", "sensor", "arduino", "esp32"],
-  "description": "Read heart rate and breath rate from HLK-LD6002 radar.",
+  "version": "2.0.0",
+  "keywords": ["radar", "heart", "breath", "distance", "presence", "position", "firmware", "sensor", "arduino", "esp32"],
+  "description": "Read HLK-LD6002 v1.3 radar data, including firmware info (0xFFFF), human presence (0x0F09), person position (0x0A04), track position (0x0A17), heart rate, breath rate, and distance.",
   "repository":
   {
     "type": "git",
@@ -11,8 +11,7 @@
   "authors":
   [
     {
-      "name": "phuongnam",
-      "email": "phuongnam720pro@gmail.com"
+      "name": "Henry Li"
     }
   ],
   "license": "MIT",
