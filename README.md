@@ -201,4 +201,3 @@ Heart Rate: 75.00 bpm
   - Added v1.3 protocol command support notes for `0xFFFF`, `0x0F09`, `0x0A04`, and `0x0A17`
   - Added README note for startup firmware version print (`0xFFFF`, sample version `1.6.7`)
   - Updated `library.json` and `library.properties` metadata
-  - Converted the example `.ino` Chinese text to English
